@@ -44,10 +44,15 @@ window.onload = function () {
     const inputAlto = document.querySelector("#heightInput");
 
     const updateSize = (e, property) => {
-        const val = e.target.value;
-        if (val > 0) cardElement.style[property] = `${val}px`;
-    };
+    const val = parseInt(e.target.value);
+    const minSize = property === "width" ? 150 : 250; 
 
+    if (val >= minSize) {
+        cardElement.style[property] = `${val}px`; 
+    } else if (e.target.value === "") {
+        cardElement.style[property] = property === "width" ? "250px" : "380px"; 
+    }
+};
     inputAncho?.addEventListener("input", (e) => updateSize(e, "width"));
     inputAlto?.addEventListener("input", (e) => updateSize(e, "height"));
 };
