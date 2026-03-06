@@ -6,7 +6,7 @@ body {
 
 #card {
     width: 250px;
-    height: 380px;
+    min-height: 380px;
     border-radius: 15px;
     background-color: white;
     position: relative;
@@ -37,11 +37,21 @@ body {
 
 .bottom-suit {
     padding-right: 15px; 
+    padding-top: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    transform: rotate(180deg); 
+}
+
+/* .bottom-suit {
+    padding-right: 15px; 
     justify-content: flex-end; 
     transform: rotate(180deg); 
     display: flex; 
     width: 100%;
-}
+} */
 
 
 .value {
